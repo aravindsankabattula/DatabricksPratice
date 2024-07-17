@@ -17,3 +17,11 @@ dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath()
 # COMMAND ----------
 
 spark.table("demo_tmp_vw").show()
+
+# COMMAND ----------
+
+dbutils.fs.cp("file:///Users/user1-42477660@lodsprodmca.onmicrosoft.com/DatabricksPratice/resources/employees.json","dbfs:/Volumes/")
+
+# COMMAND ----------
+
+peopleDF = spark.read.json("file:/Users/user1-42477660@lodsprodmca.onmicrosoft.com/DatabricksPratice/resources/employees.json")
